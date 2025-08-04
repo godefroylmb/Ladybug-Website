@@ -1,15 +1,17 @@
 import Image from "next/image";
 
-type LadybugInfo = {
+type LadybugProps = {
   imgPath: string;
-  predicted: number;
-  truth: number;
 };
 
-export default function Ladybug({ imgPath, predicted, truth}: LadybugInfo) {
+export default function Ladybug({ imgPath }: LadybugProps) {
   return (
-    <div>
-        
-    </div>
+    <Image
+      src={imgPath}
+      alt="Ladybug"
+      width={300}
+      height={300}
+      className="rounded-xl border shadow-md"
+    />
   );
 }

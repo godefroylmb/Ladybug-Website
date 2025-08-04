@@ -49,7 +49,7 @@ export default async function Home() {
     <div className="font-sans grid grid-rows-[auto_1fr_auto] min-h-screen p-8 gap-12">
       <Header />
 
-      <main className="flex flex-col items-center gap-6">
+      <main className="flex flex-col items-center gap-2">
         <Ladybug imgPath={randomEntry.imgPath} />
         <ClassificationButtons
           predicted={randomEntry.predicted}

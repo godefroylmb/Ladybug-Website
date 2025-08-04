@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ladybug guesser",
-  description: "Try to beat the AI",
+  description: "Try to beat the model",
 };
 
 export default function RootLayout({

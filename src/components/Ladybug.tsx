@@ -11,7 +11,7 @@ export default function Ladybug({ imgPath }: LadybugProps) {
       alt="Ladybug"
       width={300}
       height={300}
-      className="rounded-xl border shadow-md"
+      className="rounded-xl shadow-md "
     />
   );
 }

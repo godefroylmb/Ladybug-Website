@@ -24,8 +24,8 @@ export default function Footer() {
         <Image
           src="/icon/github.svg"
           alt="GitHub"
-          width={32}
-          height={32}
+          width={24}
+          height={24}
           className="hover:opacity-80 transition"
         />
       </a>

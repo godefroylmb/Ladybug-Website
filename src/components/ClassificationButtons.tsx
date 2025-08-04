@@ -14,18 +14,18 @@ export default function ClassificationButtons({ predicted, truth }: Props) {
   return (
     <>
       {userGuess === null ? (
-        <div className="flex gap-4 mt-4">
+        <div className="grid grid-cols-2 gap-4 mt-4 w-full max-w-2xl">
           <button
             onClick={() => setUserGuess(0)}
-            className="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"
+            className="w-full bg-red-600 text-white px-6 py-1.5 rounded-full text-sm sm:text-base hover:bg-red-700"
           >
-            European
+            Coccinella septempunctata (European)
           </button>
           <button
             onClick={() => setUserGuess(1)}
-            className="bg-yellow-600 text-white px-4 py-2 rounded-full hover:bg-yellow-700"
+            className="w-full bg-yellow-600 text-white px-6 py-1.5 rounded-full text-sm sm:text-base hover:bg-yellow-700"
           >
-            Asian
+            Harmonia axyridis (Asian)
           </button>
         </div>
       ) : (

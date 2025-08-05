@@ -23,11 +23,11 @@ export default function ResultExplanation({ userGuess, predicted, truth }: Props
   return (
     <div className="max-w-xl text-center mt-4 space-y-4">
         <p className="text-lg font-semibold">{getMessage()}</p>
-        <p className="text-sm text-white-700 dark:text-black-300">
-            How to Tell Them Apart:<br />
-            The European ladybug always has a red shell with exactly seven black spots, and you can often spot two small white dots behind its head.
-            The Asian ladybug is more variable — it might have a dark shell with light spots, or a light shell covered in many spots.<br/>
-            I built a custom feature extractor and trained a Decision Tree model, achieving 94% accuracy in distinguishing the two species.
+        <p className="text-sm text-gray-700 leading-relaxed text-justify max-w-md">
+            🧠 How to Tell Them Apart:<br />
+            The European ladybug typically has a bright red shell with exactly seven black spots, and often features two small white dots behind its head.<br />
+            The Asian ladybug shows much more variability — it may have a dark shell with light spots, or a light shell covered in many dark spots.<br />
+            I built a custom feature extractor and trained a Decision Tree model, achieving 94% accuracy in telling them apart.
         </p>
         <a
             href="https://github.com/godefroylmb/Ladybug"

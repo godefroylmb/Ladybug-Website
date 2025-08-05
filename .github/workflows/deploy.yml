@@ -41,4 +41,4 @@ jobs:
             docker pull godefroylmb/ladybug:latest
             docker stop nextjs-app || true
             docker rm nextjs-app || true
-            docker run -d --name nextjs-app -p 8192:8192 godefroylmb/ladybug:latest
+            docker run -d --name nextjs-app -p 8193:8193 godefroylmb/ladybug:latest

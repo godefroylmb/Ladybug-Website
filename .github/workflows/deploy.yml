@@ -39,6 +39,6 @@ jobs:
           port: ${{ secrets.SERVER_SSH_PORT }}
           script: |
             docker pull godefroylmb/ladybug:latest
-            docker stop nextjs-app || true
-            docker rm nextjs-app || true
-            docker run -d --name nextjs-app -p 8193:8193 godefroylmb/ladybug:latest
+            docker stop ladybug || true
+            docker rm ladybug || true
+            docker run -d --name ladybug -p 8193:8193 godefroylmb/ladybug:latest

@@ -27,7 +27,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: godefroylmb/portfolio:latest
+          tags: godefroylmb/ladybug:latest
           platforms: linux/arm64
 
       - name: Deploy to server via SSH
@@ -38,7 +38,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_SSH_PORT }}
           script: |
-            docker pull godefroylmb/portfolio:latest
+            docker pull godefroylmb/ladybug:latest
             docker stop nextjs-app || true
             docker rm nextjs-app || true
-            docker run -d --name nextjs-app -p 8192:8192 godefroylmb/portfolio:latest
+            docker run -d --name nextjs-app -p 8192:8192 godefroylmb/ladybug:latest

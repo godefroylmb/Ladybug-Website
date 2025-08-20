@@ -2,9 +2,8 @@ import fs from "fs/promises";
 import path from "path";
 
 import Header from "@/components/Header";
-import Ladybug from "@/components/Ladybug";
-import ClassificationButtons from "@/components/ClassificationButtons";
 import Footer from "@/components/Footer";
+import Quiz from "../components/Quiz";
 
 type DataEntry = {
   imgPath: string;
@@ -43,18 +42,15 @@ async function fetchData(): Promise<DataEntry[]> {
 
 export default async function Home() {
   const data = await fetchData();
-  const randomEntry = data[Math.floor(Math.random() * data.length)];
+
+  const quizData = data.sort(() => 0.5 - Math.random()).slice(0, 5);
 
   return (
     <div className="font-sans grid grid-rows-[auto_1fr_auto] min-h-screen p-8 gap-12">
       <Header />
 
-      <main className="flex flex-col items-center gap-2">
-        <Ladybug imgPath={randomEntry.imgPath} />
-        <ClassificationButtons
-          predicted={randomEntry.predicted}
-          truth={randomEntry.truth}
-        />
+      <main className="flex flex-col items-center gap-4">
+        <Quiz data={quizData} />
       </main>
 
       <Footer />

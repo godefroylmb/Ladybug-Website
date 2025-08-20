@@ -11,13 +11,13 @@ export default function ClassificationButtons({ predicted, truth, onGuess }: Pro
     <div className="grid grid-cols-2 gap-4 mt-4 w-full">
       <button
         onClick={() => onGuess(0)}
-        className="w-full py-2 px-6 rounded-lg bg-red-500 hover:bg-red-600 text-white text-sm font-medium shadow"
+        className="w-full py-2 px-6 rounded-lg bg-red-500 hover:bg-red-600 text-white text-sm font-medium shadow cursor-pointer"
       >
         Coccinella septempunctata (European)
       </button>
       <button
         onClick={() => onGuess(1)}
-        className="w-full py-2 px-6 rounded-lg bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-medium shadow"
+        className="w-full py-2 px-6 rounded-lg bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-medium shadow cursor-pointer"
       >
         Harmonia axyridis (Asian)
       </button>

@@ -11,19 +11,19 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Log in to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
@@ -34,11 +34,16 @@ jobs:
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
+          username: ${{ vars.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          port: ${{ secrets.SERVER_SSH_PORT }}
+          port: ${{ vars.SERVER_SSH_PORT }}
           script: |
             docker pull godefroylmb/ladybug:latest
             docker stop ladybug || true
             docker rm ladybug || true
-            docker run -d --name ladybug -p 8193:8193 godefroylmb/ladybug:latest
+            docker run -d \
+              --name ladybug \
+              --network caddy_net \
+              --restart unless-stopped \
+              -p 8193:8193 \
+              godefroylmb/ladybug:latest
